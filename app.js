@@ -44,6 +44,7 @@ function getShowsSync() {
             // Create a show object
             let episodes = {};
             let videos = getAllVideosIn(`${path}/${directory}`, []);
+            if (videos.length == 0) return;
 
             for (let i = 0; i < videos.length; i++) {
                 episodes[i+1] = {
