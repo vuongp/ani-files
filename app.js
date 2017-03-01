@@ -1,12 +1,13 @@
 const fs = require("fs");
 const admin = require("firebase-admin");
+const config = require("./configs/config.json");
 
-let delay = 10*60*1000;
-let path = "/Users/vuongpham/tmp/downloads";
-let linkPrefix = "https://file.vuong.work";
-let databaseName = "beta";
-let firebaseConfigFile = "./configs/ani-tv-863ff-firebase-adminsdk-i1ds4-7b78f14132.json";
-let databaseURL = "https://ani-tv-863ff.firebaseio.com";
+let delay = config.delay*60*1000;
+let path = config.path;
+let linkPrefix = config.prefix;
+let databaseName = config.databaseName;
+let firebaseConfigFile = config.configFile;
+let databaseURL = config.databaseUrl;
 
 const serviceAccount = require(firebaseConfigFile);
 
