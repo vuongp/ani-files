@@ -25,7 +25,7 @@ function getAllVideosIn(dir, videos) {
             let filePath = `${dir}/${file}`;
             if (fs.lstatSync(filePath).isDirectory()) {
                 getAllVideosIn(filePath, videos);
-            } else if (filePath.endsWith(".mkv") || filePath.endsWith(".mp4")) {
+            } else {
                 videos.push(filePath);
             }
         });
